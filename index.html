@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>relogio digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dark" id="container">
+        <div class="boxContent">
+            <div class="wolf">
+                <img id="perfil" src="img/leao.png"  class="show" alt="">
+                <img id="perfil01" src="img/lobo.png" class="hide" alt="">
+                <img id="perfil02" src="img/urso.png" class="hide" alt="">
+            </div>
+            <div class="box">
+                <div id="hours">
+            
+                </div>
+            
+                       <div id="time">
+                 <input type="text" id="inputName" placeholder="Digite uma cidade:"/>
+                 <input type="submit" id="btn" value="&#xf002"/>
+                </div>
+                <div class="text">
+                    <span id="town"></span>
+                    <div >
+                    <span id="coord"></span>
+                    </div>
+                </div>
+                <div id="content" class="hidden">
+            
+                    <div>
+                        <i id="icon" class="hide fa-solid fa-droplet"></i>
+                        <span id="humidity"></span>
+                    </div>
+                    <div>
+                        <i id="icon01"  class="hide fa-solid fa-gauge"></i>
+                        <span id="speed"></span>
+                    </div>
+                    <div>
+                        <i id="icon02"  class="hide fa-solid fa-temperature-three-quarters"></i>
+                        <span id="temp">
+                        </span>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="menu" id="menu">
+           
+            <div id="mode">
+                <span  ><i class="fa-solid fa-sun" id="modeDark-light"></i></span>
+            </div>   
+            <div id="imgs">
+                <span><i class="fa-solid fa-image"></i></span>
+            </div> 
+            <div id="colorWatech">
+                <span><i class="fa-solid fa-paint-roller"></i></span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/30c31e337d.js" crossorigin="anonymous"></script>
+</body>
+</html>

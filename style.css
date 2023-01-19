@@ -1,0 +1,262 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: gainsboro;
+}
+/*container dark*/
+.dark{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(8, 28, 29);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 5px solid gray;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+
+}
+.light{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(116, 142, 145);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 5px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+#perfil,#perfil01,#perfil02{
+    width: 15rem;
+}
+.box{
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+#hours{
+    border: 5px solid rgb(172, 167, 167);
+    border-radius: 5px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 90%;
+    color: rgb(25, 70, 25);
+    font-size: 300%;
+}
+
+#time{
+    margin-top: 2rem;
+    color: white;
+    
+}
+input{
+  padding: .4rem;
+  border: 2px solid rgb(172, 167, 167);
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+}
+#btn{
+    background-color: rgb(161, 194, 161);;
+    color: black;
+    text-transform: capitalize;
+    
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: rgb(99, 170, 99);;
+    color: rgb(0, 0, 0);
+    border: 2px solid gainsboro;
+    font-size: .9rem;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#town{
+    font-size: 2rem;
+    color: wheat;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    
+}
+#content{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+#inputCity{
+    color: rgb(245, 201, 201);
+    text-transform: capitalize;
+}
+
+#humidity,#speed,#temp,#coord{
+    color: wheat;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hide{
+   visibility: hidden;
+   display: none;
+   height: 0rem;
+}
+.icon{
+    visibility: visible;
+}
+.hidden{
+    display: none;
+    height: .5rem;
+}
+.iconC{
+    display: flex;
+}
+
+/*btn menu*/
+.dark .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-radius: 3px;
+    height: 3rem;
+    background-color: rgba(38, 66, 66, 0.397);
+    color: rgb(173, 180, 185);
+    
+}
+
+.light .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-radius: 3px;
+    height: 3rem;
+    background-color: rgba(38, 66, 66, 0.397);
+    color: rgb(255, 255, 255);
+    
+}
+
+.menuBox{ 
+    width: 2rem;
+}
+
+
+#mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 2rem;
+    
+}
+#imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 2rem;
+    z-index: 2;
+}
+#imgs label{
+    font-size: 1rem;
+    color: rgb(243, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#colorWatech{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    font-size: 2rem;
+}
+
+.show{
+    display: block;
+    margin: auto 10px;
+    visibility: visible;
+}
+
+/* reponsive*/
+@media screen (max-width:500px){ {
+    
+}
+@media screen and (max-width:500px){
+    .dark{
+        border: none;
+        background-color: rgba(21, 77, 77, 0.856);
+    }
+    .light{
+        border: none;
+        background-color: rgba(21, 77, 77, 0.856);
+    }
+    #content{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .wolf{
+        padding-top: 2rem;
+    }
+    #hours{
+        width: 90%;
+    }
+    #time{
+        display: flex;
+        flex-direction: row;
+    }
+    #town{
+        color: wheat;
+    }
+    #humidity,#speed,#temp,#coord{
+        color: wheat;
+        
+    }
+    
+    #inputName{
+        height: 1rem;
+        width: 6.6rem;
+        font-size: .8rem;
+        padding: .6rem;
+    }
+   #btn{
+    width: 2rem;
+    margin-left: .2rem;
+   }
+   
+}
