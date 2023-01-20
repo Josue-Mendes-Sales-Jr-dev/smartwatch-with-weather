@@ -117,8 +117,15 @@ btn.addEventListener('click',(e)=>{
    active()
 })
 
-btn.addEventListener('keyup',(e)=>{
-  e.preventDefault()
+inputName.addEventListener('keyup',(e)=>{
+  if(e.code==="Enter"){
+    const city=e.target.value
+    town.innerText=city
+    showData(city)
+    e.target.value=''
+    e.target.value.focus()
+    active()
+  }
   
 })
 
@@ -193,6 +200,5 @@ colorText.addEventListener('click',(e)=>{
         }
         
 })
-
 
 
