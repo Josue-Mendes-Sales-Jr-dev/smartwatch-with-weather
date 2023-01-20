@@ -32,7 +32,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(116, 142, 145);
+    background-color: rgb(93, 121, 124);
     border-radius: 1rem;
     padding: 1rem;
     border: 5px solid rgb(0, 0, 0);
@@ -105,6 +105,7 @@ input{
     width: 80%;
 }
 #inputCity{
+    background-color: rgb(7, 252, 252);
     color: rgb(245, 201, 201);
     text-transform: capitalize;
 }
@@ -124,14 +125,14 @@ input{
    display: none;
    height: 0rem;
 }
-.icon{
+.iconShow{
     visibility: visible;
 }
 .hidden{
     display: none;
     height: .5rem;
 }
-.iconC{
+.iconC-Show{
     display: flex;
 }
 
@@ -195,7 +196,7 @@ input{
     align-items: center;
     flex-direction: column;
 }
-#colorWatech{
+#colorText{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,18 +213,9 @@ input{
 }
 
 /* reponsive*/
-@media screen (max-width:500px){ {
+
+@media screen and (max-width:660px){
     
-}
-@media screen and (max-width:500px){
-    .dark{
-        border: none;
-        background-color: rgba(21, 77, 77, 0.856);
-    }
-    .light{
-        border: none;
-        background-color: rgba(21, 77, 77, 0.856);
-    }
     #content{
         justify-content: center;
         align-items: center;
@@ -259,4 +251,54 @@ input{
     margin-left: .2rem;
    }
    
+}
+
+@media screen and (min-width:0px) and (max-width:420px){
+    #dark, #light{
+        padding: 0px;
+    }
+    #perfil,#perfil01{
+       width: 14rem;
+       height:13rem;
+    }
+    #content{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-height:0px) and (max-height:600px){
+
+    #dark,#light{
+        margin: 0px;
+        padding: 0px;
+    }
+    .boxContent{
+        display:flex;
+    }
+    
+    #perfil,#perfil01{
+        width: 14rem;
+        height:16rem;
+     }
+     #content{
+        padding: .25rem;
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+    }
+
+     #town{
+        font-size: 1.3rem;
+        color: wheat;
+        text-transform: capitalize;
+        margin-bottom: .3rem;
+        
+    }
+    #humidity,#speed,#temp,#coord{
+        color: wheat;
+        font-size: .9rem;
+    }
 }

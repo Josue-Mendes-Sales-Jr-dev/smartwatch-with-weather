@@ -33,6 +33,8 @@ const icons=document.getElementById('icon')
 const icons01=document.getElementById('icon01')
 const icons02=document.getElementById('icon02')
 const content=document.getElementById('content')
+const mode=document.getElementById('container')
+const iconSunMoon=document.getElementById('modeDark-light')
 
 const getApi=async(city)=>{
     const apiWhetherURL=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`
@@ -44,19 +46,25 @@ const showData=async(city)=>{
     const data= await getApi(city)
     
     console.log(data)
-    if(data.cod=='400'){
+    if(data.cod=='400' || data.cod=='404'){
         console.log('Erro não existe cidade')
-        alert('Não existe essa cidade, tente novamente...')
+        alert('Invalido. Tente novamente.')
         speedElem.innerText=``
         humidityElem.innerText=``
         tempElem.innerText=``
         coordElem.innerText=``
+        icons.classList.remove('hide')
+        icons01.classList.remove('hide')
+        icons02.classList.remove('hide')
+        content.classList.add('hide')
         
-    }else{
+    } else{
     speedElem.innerText=`${data.wind.speed}m/s`
     humidityElem.innerText=`${data.main.humidity}%`
     tempElem.innerText=`${parseInt(data.main.temp)}C°`
     coordElem.innerText=`Lon: ${parseInt(data.coord.lon)} Lat: ${parseInt(data.coord.lat)}`
+    content.classList.remove('hide')
+
     }
 }
 
@@ -64,35 +72,35 @@ const showData=async(city)=>{
 async function active(){
     const data= await getApi(city)
 
-    if(content.classList.contains('hidden') && data.cod!='400'){
+    if(content.classList.contains('hidden') && ( data.cod!='400'||data.cod!='404')){
         content.classList.remove('hidden')
-        content.classList.add('iconC')
-    }else if(data.cod=='400'){
+        content.classList.add('iconC-Show')
+    }else if(data.cod=='400'|| data.cod=='404'){
         content.classList.remove('iconC')
         content.classList.add('hidden')
     }
     
-    if(icons.classList.contains('hide') && data.cod!='400'){
+    if(icons.classList.contains('hide') && ( data.cod!='400'||data.cod!='404')){
         icons.classList.remove('hide')
-        icons.classList.add('icon')
-    }else if(data.cod=='400'){
-        icons.classList.remove('icon')
+        icons.classList.add('iconShow')
+    }else if(data.cod=='400'|| data.cod=='404'){
+        icons.classList.remove('iconShow')
         icons.classList.add('hide')
     }
 
-    if(icons01.classList.contains('hide') && data.cod!='400'){
+    if(icons01.classList.contains('hide') && ( data.cod!='400'||data.cod!='404')){
         icons01.classList.remove('hide')
-        icons01.classList.add('icon')
-    }else if(data.cod=='400'){
-        icons01.classList.remove('icon')
+        icons01.classList.add('iconShow')
+    }else if(data.cod=='400'|| data.cod=='404'){
+        icons01.classList.remove('iconShow')
         icons01.classList.add('hide')
     }
 
-    if(icons02.classList.contains('hide') && data.cod!='400'){
+    if(icons02.classList.contains('hide') && ( data.cod!='400'||data.cod!='404')){
         icons02.classList.remove('hide')
-        icons02.classList.add('icon')
-    }else if(data.cod=='400'){
-        icons02.classList.remove('icon')
+        icons02.classList.add('iconShow')
+    }else if(data.cod=='400'|| data.cod=='404'){
+        icons02.classList.remove('iconShow')
         icons02.classList.add('hide')
     }
 
@@ -109,25 +117,30 @@ btn.addEventListener('click',(e)=>{
    active()
 })
 
+btn.addEventListener('keyup',(e)=>{
+  e.preventDefault()
+  
+})
 
 //btn modeDark-light
 
 const btnMode=document.getElementById('mode')
 
 btnMode.addEventListener('click', ()=>{
-    const mode=document.getElementById('container')
-    const iconSunMoon=document.getElementById('modeDark-light')
+    
 
     if(mode.classList.contains('dark') && iconSunMoon.classList.contains('fa-sun')){
         mode.classList.remove('dark')
         mode.classList.add('light')
         iconSunMoon.classList.remove('fa-sun')
         iconSunMoon.classList.add('fa-moon')
+        
     } else{
         mode.classList.remove('light')
         mode.classList.add('dark')
         iconSunMoon.classList.remove('fa-moon')
         iconSunMoon.classList.add('fa-sun')
+     
     }
 
 })
@@ -159,3 +172,27 @@ btnMode.addEventListener('click', ()=>{
    
     
  })
+
+ //color the of text
+
+ const colorText=document.querySelector('#colorText')
+colorText.addEventListener('click',(e)=>{
+
+       if(town.style.color=='wheat'){
+        tempElem.style.color="rgb(7, 252, 252)"
+        speedElem.style.color="rgb(7, 252, 252)"
+        humidityElem.style.color="rgb(7, 252, 252)"
+        coordElem.style.color="rgb(7, 252, 252)"
+        town.style.color="rgb(7,252,252)"
+    } else{
+        tempElem.style.color="wheat"
+        speedElem.style.color="wheat"
+        humidityElem.style.color="wheat"
+        coordElem.style.color="wheat"
+        town.style.color="wheat"
+        }
+        
+})
+
+
+
